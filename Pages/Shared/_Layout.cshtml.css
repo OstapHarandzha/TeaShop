@@ -5,33 +5,54 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  color: #3e5c3a !important;
 }
 
 a {
-  color: #0077cc;
+  color: #8d6748;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #3e5c3a;
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #8bc34a;
+  border-color: #7cb342;
+  transition: background 0.2s;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #7cb342;
+  border-color: #689f38;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.navbar, .navbar-light, .navbar.bg-white {
+  background-color: #3e5c3a !important;
+  border-bottom: 2px solid #c8b08b;
+}
+
+.nav-link, .navbar-brand {
+  color: #f9f7f2 !important;
+  font-weight: bold;
+  font-size: 2.15rem;
+  text-shadow: 0 1px 2px rgba(62,92,58,0.15);
+}
+
+.nav-link:hover, .navbar-brand:hover {
+  color: #8bc34a !important;
+  text-shadow: 0 2px 4px rgba(62,92,58,0.18);
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #c8b08b;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #c8b08b;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .25rem .75rem rgba(62, 92, 58, .08);
 }
 
 button.accept-policy {
@@ -45,4 +66,7 @@ button.accept-policy {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+  background: #f5f5e6;
+  color: #5a4632;
+  border-top: 2px solid #c8b08b;
 }

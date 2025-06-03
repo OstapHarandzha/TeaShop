@@ -1,0 +1,23 @@
+@page
+@model TeaShop.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container py-5" style="max-width: 400px;">
+    <h2 class="mb-4 text-center">Login</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email address</label>
+            <input asp-for="Email" class="form-control" type="email" required />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input asp-for="Password" class="form-control" type="password" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+        <div class="mt-3 text-center">
+            <span>Don't have an account? <a asp-page="/Signup">Sign Up</a></span>
+        </div>
+    </form>
+</div> 
