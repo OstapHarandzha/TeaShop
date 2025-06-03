@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using TeaShop.DataBase;
+
 namespace TeaShop
 {
     public class Program
@@ -8,6 +11,9 @@ namespace TeaShop
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<Database>(options => options.UseSqlServer(connection));
 
             var app = builder.Build();
 
