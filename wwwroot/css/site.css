@@ -1,22 +1,34 @@
 html {
   font-size: 14px;
+  background: linear-gradient(135deg, #f5f5e6 0%, #e8f5e9 100%);
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 22px;
   }
 }
 
+body {
+  margin-bottom: 60px;
+  background: none;
+  color: #5a4632;
+  font-family: 'Playfair Display', 'Inter', serif, sans-serif;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.1rem #e8f5e9, 0 0 0 0.25rem #8bc34a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8b08b;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5e6;
 }
 
 html {
   position: relative;
   min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
 }

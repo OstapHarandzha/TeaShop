@@ -361,3 +361,12 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# --- TeaShop custom ignores ---
+# Exclude all product images (uploaded by users/admins)
+wwwroot/shop-pictures/*
+
+# But include main page images (static, needed for repo)
+!wwwroot/pictures/*
+
+# --- End TeaShop custom ignores ---

@@ -1,0 +1,57 @@
+@page
+@model TeaShop.Pages.AdminOrdersModel
+@{
+    ViewData["Title"] = "All Orders";
+}
+<div class="container py-4">
+    <h2>All Submitted Orders</h2>
+    @if (Model.Orders.Count == 0)
+    {
+        <p>No orders have been submitted yet.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>User</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Items</th>
+                    <th>Change Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model.Orders)
+                {
+                    <tr>
+                        <td>@order.Id</td>
+                        <td>@(order.User != null ? order.User.Username : "[deleted]")</td>
+                        <td>@order.OrderDate.ToShortDateString()</td>
+                        <td>@order.Status</td>
+                        <td>
+                            <ul>
+                                @foreach (var item in order.Items)
+                                {
+                                    <li>@item.Product.Name x @item.Quantity</li>
+                                }
+                            </ul>
+                        </td>
+                        <td>
+                            <form method="post" asp-page-handler="ChangeStatus" asp-route-id="@order.Id">
+                                <select name="status" class="form-select form-select-sm d-inline w-auto">
+                                    <option value="Pending" selected="@(order.Status == "Pending" ? "selected" : null)">Pending</option>
+                                    <option value="Processing" selected="@(order.Status == "Processing" ? "selected" : null)">Processing</option>
+                                    <option value="Shipped" selected="@(order.Status == "Shipped" ? "selected" : null)">Shipped</option>
+                                    <option value="Completed" selected="@(order.Status == "Completed" ? "selected" : null)">Completed</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary btn-sm ms-2">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div> 

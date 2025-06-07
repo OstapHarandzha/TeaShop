@@ -1,10 +1,90 @@
 ﻿@page
-@model IndexModel
+@model TeaShop.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-5">
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+            <h1 class="display-4 fw-bold">Welcome to Vervain</h1>
+            <p class="lead">Discover the finest selection of premium teas from around the world. Each cup tells a story of tradition, quality, and exceptional taste.</p>
+            <a href="/Shop" class="btn btn-primary btn-lg me-2">Shop Now</a>
+            <a href="#about" class="btn btn-outline-secondary btn-lg">Learn More</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="~/pictures/main_cup0.png" class="img-fluid rounded" alt="Premium tea collection">
+        </div>
+    </div>
+
+    <section id="featured" class="mb-5">
+        <h2 class="mb-4">Featured Teas</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/pictures/blue_tea.png" class="card-img-top" alt="Earl Grey Supreme">
+                    <div class="card-body">
+                        <h5 class="card-title">Earl Grey Supreme</h5>
+                        <p class="card-text">A classic blend with bergamot and cornflower petals.</p>
+                        <span class="fw-bold">$24.99</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/pictures/green_tea.png" class="card-img-top" alt="Dragon Well Green">
+                    <div class="card-body">
+                        <h5 class="card-title">Dragon Well Green</h5>
+                        <p class="card-text">Delicate Chinese green tea with a sweet, nutty flavor.</p>
+                        <span class="fw-bold">$32.99</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/pictures/yellow_tea.png" class="card-img-top" alt="Himalayan Gold">
+                    <div class="card-body">
+                        <h5 class="card-title">Himalayan Gold</h5>
+                        <p class="card-text">High-altitude black tea with complex floral notes.</p>
+                        <span class="fw-bold">$45.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="~/pictures/plantation.png?height=250&width=350" class="img-fluid rounded" alt="Tea plantation">
+            </div>
+            <div class="col-md-6">
+                <h2>Our Story</h2>
+                <p>Vervain has been sourcing the world's finest teas for over two decades. We work directly with tea gardens and artisans to bring you exceptional quality and authentic flavors.</p>
+                <p>From the misty mountains of Darjeeling to the ancient tea gardens of Fujian, every tea in our collection is carefully selected for its unique character and superior quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="mb-5">
+        <h2>Get in Touch</h2>
+        <div>
+            <h5>Visit Our Store</h5>
+            <address>
+                123 Tea Garden Lane<br />
+                Brew City, BC 12345<br />
+                <abbr title="Phone">P:</abbr> (555) 123-4567<br />
+                <abbr title="Email">E:</abbr> hello@vervain.com
+            </address>
+            <h6 class="mt-4">Business Hours</h6>
+            <ul class="list-unstyled mb-3">
+                <li>Mon-Fri: 9:00 AM – 7:00 PM</li>
+                <li>Sat: 10:00 AM – 5:00 PM</li>
+                <li>Sun: Closed</li>
+            </ul>
+            <div class="ratio ratio-16x9 rounded shadow-sm" style="max-width: 500px;">
+                <iframe src="https://maps.google.com/maps?q=123%20Tea%20Garden%20Lane&t=&z=13&ie=UTF8&iwloc=&output=embed" style="border:0; width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Store Location"></iframe>
+            </div>
+        </div>
+    </section>
 </div>

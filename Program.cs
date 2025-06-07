@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using TeaShop.DataBase;
+
 namespace TeaShop
 {
     public class Program
@@ -8,6 +11,19 @@ namespace TeaShop
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<Database>(options => options.UseSqlServer(connection));
+
+            builder.Services.AddAuthentication("TeaShopCookie")
+                .AddCookie("TeaShopCookie", options =>
+                {
+                    options.LoginPath = "/Login";
+                    options.LogoutPath = "/Logout";
+                    options.ExpireTimeSpan = TimeSpan.FromHours(1);
+                });
+
+            builder.Services.AddSession();
 
             var app = builder.Build();
 
@@ -24,7 +40,10 @@ namespace TeaShop
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapRazorPages();
 
