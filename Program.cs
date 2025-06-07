@@ -15,6 +15,16 @@ namespace TeaShop
             string connection = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<Database>(options => options.UseSqlServer(connection));
 
+            builder.Services.AddAuthentication("TeaShopCookie")
+                .AddCookie("TeaShopCookie", options =>
+                {
+                    options.LoginPath = "/Login";
+                    options.LogoutPath = "/Logout";
+                    options.ExpireTimeSpan = TimeSpan.FromHours(1);
+                });
+
+            builder.Services.AddSession();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -30,7 +40,10 @@ namespace TeaShop
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapRazorPages();
 

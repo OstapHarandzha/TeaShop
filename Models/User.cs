@@ -19,8 +19,8 @@ namespace TeaShop.Models
 
         [Required]
         [MinLength(8)]
-        public string? Password { get; set; }   
+        public string? Password { get; set; }
 
-        
+        public bool IsAdmin { get; set; } = false;
     }
 }
