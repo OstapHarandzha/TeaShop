@@ -36,7 +36,7 @@ namespace TeaShop.Pages
             if (!User.Identity.IsAuthenticated)
             {
                 // Redirect to login if not authenticated
-                return RedirectToPage("/Login");
+                return RedirectToPage("/Account/Login");
             }
 
             // Get user ID

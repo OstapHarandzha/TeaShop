@@ -18,7 +18,7 @@ namespace TeaShop
             builder.Services.AddAuthentication("TeaShopCookie")
                 .AddCookie("TeaShopCookie", options =>
                 {
-                    options.LoginPath = "/Login";
+                    options.LoginPath = "/Account/Login";
                     options.LogoutPath = "/Logout";
                     options.ExpireTimeSpan = TimeSpan.FromHours(1);
                 });
