@@ -80,7 +80,7 @@ namespace TeaShop.Pages
         public async Task<IActionResult> OnPostSubmitOrderAsync()
         {
             if (!User.Identity.IsAuthenticated)
-                return RedirectToPage("/Login");
+                return RedirectToPage("/Account/Login");
             int userId = int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value);
             var order = _db.Orders.Include(o => o.Items).FirstOrDefault(o => o.UserId == userId && o.IsActive);
             if (order == null || order.Items.Count == 0)
